@@ -1,0 +1,173 @@
+/* Selected work: project layout, bullet lists, chips and the diagram frame. */
+
+.proj {
+  border-top: 1px solid var(--rule-2);
+  padding: calc(var(--cell) * 0.55) 0 calc(var(--cell) * 0.9);
+}
+.proj__head {
+  margin-bottom: calc(var(--cell) * 0.45);
+  grid-template-columns: auto 1fr;
+  align-items: end;
+  column-gap: 24px;
+  display: grid;
+}
+.proj__n {
+  font: 300 clamp(26px, 2.6vw, 40px)/1 var(--f-display);
+  color: var(--muted);
+  grid-row: span 2;
+  align-self: start;
+  padding-top: 0.2em;
+}
+.proj__head h3 {
+  font: 800 clamp(44px, 6.4vw, 112px)/0.9 var(--f-display);
+  text-transform: uppercase;
+  margin: 0;
+}
+.proj__client {
+  color: var(--data);
+  margin: 6px 0 0;
+  font-size: 15px;
+}
+.proj__body {
+  gap: calc(var(--cell) * 0.6);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  align-items: start;
+  display: grid;
+}
+.proj__text > p {
+  max-width: 54ch;
+  margin: 0 0 20px;
+  font-size: 18px;
+}
+.proj__owned {
+  border-top: 1px solid var(--rule);
+  max-width: 54ch;
+  margin: 0 0 22px;
+  padding: 0;
+  list-style: none;
+}
+.proj__owned li {
+  border-bottom: 1px solid var(--rule);
+  color: #c9d1e2;
+  padding: 9px 0 9px 22px;
+  font-size: 15px;
+  position: relative;
+}
+.proj__owned li:before {
+  content: "";
+  background: var(--signal);
+  width: 8px;
+  height: 1px;
+  position: absolute;
+  top: 1.05em;
+  left: 2px;
+}
+.chips {
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+.chips li {
+  border: 1px solid var(--rule-2);
+  color: var(--muted);
+  padding: 4px 10px;
+  font-size: 13px;
+}
+.proj__viz {
+  aspect-ratio: 16/11;
+  border: 1px solid var(--rule-2);
+  background:
+    linear-gradient(to right, color-mix(in srgb, var(--rule) 60%, transparent) 1px, transparent 1px)
+      0 0 / 24px 24px,
+    linear-gradient(
+        to bottom,
+        color-mix(in srgb, var(--rule) 60%, transparent) 1px,
+        transparent 1px
+      )
+      0 0 / 24px 24px,
+    color-mix(in srgb, var(--ink-2) 88%, transparent);
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+.proj__viz--iso {
+  aspect-ratio: auto;
+  background: 0 0;
+  border: 0;
+  overflow: visible;
+}
+.proj__viz > svg {
+  width: 100%;
+  height: 100%;
+}
+.proj__viz .cap {
+  margin: 0;
+  position: absolute;
+  bottom: 10px;
+  left: 12px;
+}
+.proj__viz .read {
+  color: var(--signal);
+  margin: 0;
+  position: absolute;
+  bottom: 10px;
+  right: 12px;
+}
+.proj__viz .fig {
+  margin: 0;
+  position: absolute;
+  top: 10px;
+  left: 12px;
+}
+@media (width>=901px) {
+  .proj[data-viz="aware"] .proj__body {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.5fr);
+  }
+}
+.proj__viz .iso {
+  --anatomy-page: transparent;
+  --anatomy-card: #0f1b35;
+  --anatomy-text: var(--muted);
+  --anatomy-strong: var(--paper);
+  --anatomy-muted: #6f7c99;
+  --anatomy-paper: #12203d;
+  --anatomy-face: #1a2a4c;
+  --anatomy-top: #1a2b4f;
+  --anatomy-shade-0: #0b1530;
+  --anatomy-shade-1: #0e1935;
+  --anatomy-shade-2: #111e3c;
+  --anatomy-shade-3: #142343;
+  --anatomy-lit-top: #2a3550;
+  --anatomy-lit-shade: #1f2a44;
+  --anatomy-hi: #dfe5f0;
+  --anatomy-mid: #6c7ea6;
+  --anatomy-lo: #3a5180;
+  --anatomy-faint: #26395f;
+  --anatomy-lit: var(--signal);
+  --anatomy-halo: #040a18;
+  --anatomy-halo-opacity: 0.85;
+  --anatomy-dot: #dfe5f0;
+  --anatomy-red: #ff7a66;
+  --anatomy-mono: var(--f-mono);
+  --anatomy-lift: 0 0 0 1px var(--rule-2);
+  color: var(--muted);
+}
+.proj__viz .iso .iso-plate {
+  box-shadow: 0 0 0 1px var(--rule-2);
+  border-radius: 0;
+}
+.proj__viz .iso .iso-caption {
+  max-width: 70ch;
+}
+.proj__viz .iso .aw-on > .iso-top {
+  fill: var(--signal);
+}
+.proj__viz .iso .aw-on > .iso-shade {
+  fill: #b9862c;
+}
+.proj__viz .iso .aw-on > .iso-fill {
+  fill: #d89c35;
+}

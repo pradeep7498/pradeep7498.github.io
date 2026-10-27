@@ -1,0 +1,134 @@
+/* The terminal-style boot intro. */
+
+.boot {
+  --phos: #ffbf47;
+  --phos-dim: #a77a2c;
+  --flash: 0;
+  z-index: 90;
+  background: radial-gradient(at 50% 45%, #0b1222 0%, #05080f 70%, #020306 100%);
+  align-content: start;
+  padding: clamp(28px, 9vh, 120px) max(16px, 8vw);
+  display: grid;
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+}
+.boot__screen {
+  transform-origin: 50% 40%;
+  font:
+    400 clamp(15px, 1.75vw, 27px)/1.45 "VT323",
+    var(--f-mono);
+  color: var(--phos);
+  text-shadow:
+    0 0 6px #ffbf478c,
+    0 0 18px #ffbf472e;
+  white-space: pre;
+  filter: brightness(calc(1 + var(--flash) * 2));
+  animation: 3.2s step-end infinite flicker;
+  position: relative;
+}
+.boot:before {
+  content: "";
+  pointer-events: none;
+  z-index: 2;
+  background: repeating-linear-gradient(#00000047 0 1px, #0000 1px 3px);
+  position: absolute;
+  inset: 0;
+}
+.boot:after {
+  content: "";
+  pointer-events: none;
+  z-index: 3;
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 18vmin #000000d9;
+}
+@keyframes flicker {
+  0%,
+  to {
+    opacity: 1;
+  }
+  47% {
+    opacity: 0.94;
+  }
+  48% {
+    opacity: 1;
+  }
+  81% {
+    opacity: 0.97;
+  }
+}
+.boot__l {
+  min-height: 1.45em;
+}
+.boot__l.is-dim {
+  color: var(--phos-dim);
+  text-shadow: none;
+}
+.boot__l.is-row {
+  grid-template-columns: var(--w, 34ch) 9ch 12ch 9ch;
+  column-gap: 1.4ch;
+  display: grid;
+}
+.boot__l .c-n,
+.boot__l .c-x {
+  text-align: right;
+}
+.boot__l.is-done .c-bar {
+  color: var(--phos-dim);
+}
+.boot__l .c-ok {
+  color: #fff3d6;
+}
+.boot__l.is-prompt {
+  margin-top: 0.9em;
+}
+.boot__l .c-user {
+  color: #fff3d6;
+}
+.boot__l .c-path {
+  color: var(--data);
+}
+.boot__caret {
+  vertical-align: -0.18em;
+  background: var(--phos);
+  width: 0.62em;
+  height: 1.05em;
+  margin-left: 0.15em;
+  animation: 1s step-end infinite caret;
+  display: inline-block;
+  box-shadow: 0 0 10px #ffbf4799;
+}
+@keyframes caret {
+  50% {
+    opacity: 0;
+  }
+}
+.boot__skip {
+  z-index: 4;
+  font:
+    400 16px/1 "VT323",
+    var(--f-mono);
+  color: var(--phos-dim);
+  letter-spacing: 0.06em;
+  margin: 0;
+  position: absolute;
+  bottom: max(16px, 4vh);
+  right: max(16px, 4vw);
+}
+@media (width<=640px) {
+  .boot__screen {
+    font-size: 13.5px;
+  }
+  .boot__l.is-row {
+    grid-template-columns: var(--w, 31ch) 9ch;
+    column-gap: 0.6ch;
+  }
+  .boot__l .c-bar,
+  .boot__l .c-x {
+    display: none;
+  }
+  .boot__l.is-dim {
+    white-space: normal;
+  }
+}

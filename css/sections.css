@@ -1,0 +1,41 @@
+/* Shared section heading ([01] Profile, [02] Work ...). */
+
+.chapter {
+  padding: 0 var(--pad) calc(var(--cell) * 1.6);
+  position: relative;
+}
+.ch-head {
+  top: var(--cell);
+  z-index: 10;
+  margin: 0 calc(var(--pad) * -1);
+  padding: 14px var(--pad);
+  border-block: 1px solid var(--rule-2);
+  background: color-mix(in srgb, var(--ink) 86%, transparent);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  display: flex;
+  position: sticky;
+}
+.ch-num {
+  font: 300 clamp(48px, 7vw, 110px)/0.9 var(--f-display);
+  color: var(--paper);
+}
+.ch-title {
+  font: 900 clamp(48px, 8.4vw, 150px)/0.86 var(--f-display);
+  text-transform: uppercase;
+  text-align: right;
+  letter-spacing: -0.005em;
+  margin: 0;
+}
+.ch-title .ch {
+  display: inline-block;
+}
+.ch-sub {
+  max-width: 46ch;
+  margin: calc(var(--cell) * 0.7) 0 calc(var(--cell) * 0.4);
+  color: var(--muted);
+  font-size: 18px;
+}

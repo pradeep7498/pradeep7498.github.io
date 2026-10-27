@@ -1,0 +1,140 @@
+/* First screen: big title, corner tags, frame and scroll ruler. */
+
+.hero {
+  min-height: 100svh;
+  padding: calc(var(--cell) * 2) var(--pad) calc(var(--cell) * 1.4);
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1fr 1fr;
+  display: grid;
+  position: relative;
+}
+.hero__tag {
+  letter-spacing: 0.06em;
+  color: var(--paper);
+  align-self: start;
+  margin: 0;
+  font-size: 14px;
+}
+.hero__tag a {
+  border-bottom: 1px solid var(--rule-2);
+  text-decoration: none;
+}
+.hero__tag a:hover {
+  border-color: var(--signal);
+}
+.idx {
+  color: var(--muted);
+}
+.hero__tag--tl {
+  padding-left: var(--cell);
+  grid-area: 1/1;
+}
+.hero__tag--tr {
+  padding-right: var(--cell);
+  grid-area: 1/2;
+  justify-self: end;
+}
+.hero__tag--bl {
+  padding-left: var(--cell);
+  grid-area: 3/1;
+}
+.hero__tag--br {
+  padding-right: var(--cell);
+  grid-area: 3/2;
+  justify-self: end;
+}
+.hero__title {
+  font: 300 clamp(44px, 7.6vw, 132px)/0.92 var(--f-display);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  pointer-events: none;
+  grid-area: 2/1 / auto/-1;
+  justify-content: space-between;
+  align-self: center;
+  margin: 0;
+  display: flex;
+}
+.hero__l,
+.hero__r {
+  padding: 0 calc(var(--cell) * 1);
+  display: grid;
+}
+.hero__r {
+  text-align: right;
+}
+.hero__title .line {
+  display: block;
+  overflow: hidden;
+}
+.hero__title .line > span {
+  display: inline-block;
+}
+.hero__l .line:last-child,
+.hero__r .line:last-child {
+  font-weight: 800;
+}
+.hero__frame {
+  aspect-ratio: 1;
+  pointer-events: none;
+  width: min(40vw, 520px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.hero__frame i {
+  width: var(--cell);
+  height: var(--cell);
+  border: 1px solid var(--rule-2);
+  position: absolute;
+}
+.hero__frame i:first-child {
+  border-width: 1px 0 0 1px;
+  top: 0;
+  left: 0;
+}
+.hero__frame i:nth-child(2) {
+  border-width: 1px 1px 0 0;
+  top: 0;
+  right: 0;
+}
+.hero__frame i:nth-child(3) {
+  border-width: 0 0 1px 1px;
+  bottom: 0;
+  left: 0;
+}
+.hero__frame i:nth-child(4) {
+  border-width: 0 1px 1px 0;
+  bottom: 0;
+  right: 0;
+}
+.ruler {
+  left: var(--pad);
+  right: var(--pad);
+  bottom: calc(var(--cell) * 0.45);
+  background:
+    repeating-linear-gradient(to right, var(--rule-2) 0 1px, transparent 1px calc(var(--cell) / 2)),
+    repeating-linear-gradient(to right, var(--muted) 0 1px, transparent 1px var(--cell));
+  border-bottom: 1px solid var(--rule-2);
+  background-position: bottom, bottom;
+  background-repeat: no-repeat;
+  background-size:
+    100% 6px,
+    100% 12px;
+  height: 18px;
+  position: absolute;
+}
+.ruler__cursor {
+  background: var(--signal);
+  width: 1px;
+  height: 26px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.hero__read {
+  right: var(--pad);
+  bottom: calc(var(--cell) * 0.45 + 26px);
+  margin: 0;
+  position: absolute;
+}

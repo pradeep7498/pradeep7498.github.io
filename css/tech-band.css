@@ -1,0 +1,42 @@
+/* Scrolling band of technology names. */
+
+.band {
+  border-block: 1px solid var(--rule-2);
+  background: color-mix(in srgb, var(--ink) 70%, transparent);
+  padding: 1.2vw 0;
+  position: relative;
+  overflow: hidden;
+}
+.band__line {
+  will-change: transform;
+  width: max-content;
+  display: flex;
+}
+.band__row {
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+.band__row li {
+  font: 900 clamp(30px, 4.4vw, 72px)/0.9 var(--f-display);
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--paper);
+  align-items: center;
+  display: flex;
+}
+.band__row li.o {
+  color: #0000;
+  -webkit-text-stroke: 1px var(--paper);
+}
+.band__row li:after {
+  content: "";
+  background: var(--signal);
+  flex: none;
+  width: 0.16em;
+  height: 0.16em;
+  margin: 0 0.38em;
+  transform: rotate(45deg);
+}

@@ -1,0 +1,52 @@
+/* Stroke (sx), fill (fx) and text (tx) classes used inside the animated diagrams. */
+
+.sx {
+  fill: none;
+  stroke: var(--paper);
+  stroke-width: 1.2px;
+  vector-effect: non-scaling-stroke;
+}
+.sx-m {
+  fill: none;
+  stroke: var(--muted);
+  stroke-width: 1px;
+  vector-effect: non-scaling-stroke;
+}
+.sx-r {
+  fill: none;
+  stroke: var(--rule-2);
+  stroke-width: 1px;
+  vector-effect: non-scaling-stroke;
+}
+.sx-d {
+  fill: none;
+  stroke: var(--data);
+  stroke-width: 1.2px;
+  vector-effect: non-scaling-stroke;
+}
+.sx-s {
+  fill: none;
+  stroke: var(--signal);
+  stroke-width: 1.6px;
+  vector-effect: non-scaling-stroke;
+}
+.fx-s {
+  fill: var(--signal);
+}
+.fx-p {
+  fill: var(--paper);
+}
+.fx-d {
+  fill: var(--data);
+}
+.fx-i {
+  fill: var(--ink-2);
+}
+.tx {
+  font: 400 10px var(--f-mono);
+  fill: var(--muted);
+}
+.tx-s {
+  font: 400 10px var(--f-mono);
+  fill: var(--signal);
+}

@@ -1,0 +1,57 @@
+/* Stack table ("parts list"). */
+
+.bom {
+  border: 1px solid var(--rule-2);
+  background: color-mix(in srgb, var(--ink) 80%, transparent);
+}
+.bom__row {
+  border-bottom: 1px solid var(--rule);
+  grid-template-columns: 13em 1fr 16em;
+  transition: background 0.35s;
+  display: grid;
+  position: relative;
+}
+.bom__row:last-child {
+  border-bottom: 0;
+}
+.bom__row > span {
+  padding: 16px 18px;
+}
+.bom__row > span:first-child {
+  font: 800 22px/1.15 var(--f-display);
+  text-transform: uppercase;
+  border-right: 1px solid var(--rule);
+}
+.bom__row > span:last-child {
+  color: var(--muted);
+  border-left: 1px solid var(--rule);
+  font-size: 14px;
+  transition: color 0.35s;
+}
+.bom__row--h > span {
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  padding-block: 12px;
+  font: 400 12px/1 var(--f-body) !important;
+}
+.bom__row:not(.bom__row--h):before {
+  content: "";
+  background: var(--signal);
+  transform-origin: top;
+  width: 2px;
+  transition: transform 0.45s var(--ease);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  transform: scaleY(0);
+}
+.bom__row:not(.bom__row--h):hover {
+  background: color-mix(in srgb, var(--ink-2) 90%, transparent);
+}
+.bom__row:not(.bom__row--h):hover:before {
+  transform: scaleY(1);
+}
+.bom__row:not(.bom__row--h):hover > span:last-child {
+  color: var(--signal);
+}

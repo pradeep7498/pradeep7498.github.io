@@ -1,0 +1,74 @@
+/* Web fonts (files in /fonts). Big Shoulders Display = headings, Hanken Grotesk = text,
+   JetBrains Mono = small data labels, VT323 = boot terminal. */
+
+@font-face {
+  font-family: "Big Shoulders Display";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../fonts/big-shoulders-display-300.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Big Shoulders Display";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/big-shoulders-display-500.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Big Shoulders Display";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("../fonts/big-shoulders-display-800.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Big Shoulders Display";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("../fonts/big-shoulders-display-900.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Hanken Grotesk";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/hanken-grotesk-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Hanken Grotesk";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/hanken-grotesk-500.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Hanken Grotesk";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/hanken-grotesk-600.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/jetbrains-mono-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "VT323";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/vt323-400.woff2") format("woff2");
+}
