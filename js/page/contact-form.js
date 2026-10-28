@@ -7,7 +7,7 @@
  */
 
 /** Where form messages are delivered. */
-const CONTACT_EMAIL = "spr7498@gmail.com";
+const CONTACT_EMAIL = "medikondaspr@gmail.com";
 const FORM_ENDPOINT = `https://formsubmit.co/ajax/${CONTACT_EMAIL}`;
 
 function initContactForm() {
